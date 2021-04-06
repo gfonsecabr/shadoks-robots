@@ -540,7 +540,7 @@ public:
   }
   
   
-  optional<tsl::hopscotch_set<Robot *>> findIllegalPath(Robot *r, int limitastar, Valuer *valuer, tsl::hopscotch_map<Robot *, int> &conflict_cost) {
+  tsl::hopscotch_set<Robot *> findIllegalPath(Robot *r, int limitastar, Valuer *valuer, tsl::hopscotch_map<Robot *, int> &conflict_cost) {
     const vector<Point> displacements{{Point(0,0), Point(0,1), Point(0,-1), Point(1,0), Point(-1,0)}};
 
     SuperCrash crash;
@@ -663,7 +663,7 @@ public:
       }
     }
 
-    return nullopt;
+    return {r};
   }
 
   void unifyMakespan() {
