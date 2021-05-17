@@ -125,7 +125,7 @@ int main(int argc, char **argv) {
       best.writeFile(basefn, "optimizerC", "solution");
     }
     else {
-      cout << "This line is never reached" << endl;
+      cout << "Restarting optimization" << endl;
     }
   }
 
